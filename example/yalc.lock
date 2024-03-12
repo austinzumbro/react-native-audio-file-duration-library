@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "react-native-audio-file-duration-library": {
+      "signature": "35c7ec36d7bb3c34592e652b7cd95c98",
+      "file": true
+    }
+  }
+}

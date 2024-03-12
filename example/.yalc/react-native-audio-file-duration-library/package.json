@@ -1,0 +1,140 @@
+{
+  "name": "react-native-audio-file-duration-library",
+  "version": "0.1.0",
+  "description": "Takes a path to a local audio file and returns the duration in an asynchronous fashion.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace react-native-audio-file-duration-library-example",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
+    "release": "release-it"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinzumbro/react-native-audio-file-duration-library.git"
+  },
+  "author": "Austin Zumbro <azumbro@gmail.com> (https://github.com/austinzumbro)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/austinzumbro/react-native-audio-file-duration-library/issues"
+  },
+  "homepage": "https://github.com/austinzumbro/react-native-audio-file-duration-library#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "resolutions": {
+    "@types/react": "^18.2.44"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "private": true,
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@3.6.1",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "yalcSig": "35c7ec36d7bb3c34592e652b7cd95c98"
+}
